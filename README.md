@@ -55,18 +55,11 @@ project-root/
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/lcrodolfo/posgradproject
 cd project-root
 ```
 
-2. Create a virtual environment (optional but recommended):
-
-```bash
-python -m venv venv
-venv\Scripts\activate   # Windows
-```
-
-3. Install dependencies:
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -81,7 +74,6 @@ Run all tests:
 ```bash
 pytest -v
 ```
-
 Run a specific test:
 
 ```bash
@@ -91,13 +83,9 @@ pytest tests/test_login.py::test_login_valid_credentials -v
 Run by keyword:
 
 ```bash
-pytest -k "login" -v
-```
-
-Run by custom TC ID:
-
-```bash
-pytest --tc TC09 -v
+pytest -k "TC01" -v
+pytest -k "TC02" -v
+and on..
 ```
 
 ---
@@ -107,15 +95,15 @@ pytest --tc TC09 -v
 Defined in `pytest.ini`:
 
 * `login` → login tests
-* `register` → registration tests
+* `success` → main tests
 * `negative` → negative scenarios
-* `smoke` → critical tests
+* `tc_id(id)` → test case identifier
 
-Example:
 
 ```python
 @pytest.mark.login
 @pytest.mark.negative
+@pytest.mark.tc_id(TC01)
 ```
 
 Run by marker:
@@ -123,22 +111,6 @@ Run by marker:
 ```bash
 pytest -m login -v
 ```
-
----
-
-## 🧪 Data-Driven Testing
-
-Test data is stored externally in:
-
-```
-test_data.json
-```
-
-This allows:
-
-* easy maintenance
-* reusable test cases
-* scalable coverage
 
 ---
 
@@ -172,17 +144,7 @@ logs/run_<timestamp>/
 ├── results.log    # PASS / FAIL summary
 ├── *.png          # screenshots on failure
 ```
-
-### Features:
-
-* logs per execution
-* console + file logging
-* automatic test result tracking
-* execution summary with success rate
-
----
-
-## 📸 Screenshot on Failure
+## Screenshot on Failure
 
 Screenshots are automatically captured when a test fails:
 
@@ -193,7 +155,7 @@ Screenshot saved: logs/run_xxx/test.png
 
 ---
 
-## 📊 Test Summary
+## Test Summary
 
 At the end of execution:
 
@@ -207,30 +169,7 @@ Success Rate: XX%
 
 ---
 
-## ⚠️ Special Handling
-
-### Alerts
-
-Browser alerts are handled using:
-
-```python
-alert = WebDriverWait(driver, 10).until(EC.alert_is_present())
-alert.accept()
-```
-
----
-
-### Dynamic Elements
-
-Robust locators used:
-
-* `contains()`
-* `normalize-space()`
-* explicit waits
-
----
-
-## 💡 Best Practices Used
+## Best Practices Used
 
 * Page Object Model
 * Explicit waits (no sleep)
@@ -241,22 +180,8 @@ Robust locators used:
 
 ---
 
-## 🧠 Future Improvements
-
-* Allure reporting
-* CI/CD integration
-* Parallel execution
-* API integration
-* Faker for dynamic data
-
----
-
 ## 👨‍💻 Author
 
 Rodolfo Cassimiro
 
 ---
-
-## 💬 Interview Summary
-
-> This project demonstrates a scalable Selenium automation framework using Pytest, with POM design, data-driven testing, logging, and reporting.
