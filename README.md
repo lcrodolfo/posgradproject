@@ -16,21 +16,24 @@ https://demoqa.com/
 project-root/
 │
 ├── pages/                # Page Object Model classes
-│   ├── base_page.py
 │   ├── login_page.py
 │   ├── register_page.py
-│   └── book_store_page.py
+│   └── profile_page.py
 │
 ├── tests/                # Test cases
 │   ├── test_login.py
-│   ├── test_register.py
-│   └── test_book_store.py
+│   ├── test_profile.py
+│   └── test_register.py
 │
 ├── utils/                # Utilities (loggers)
 │   └── logger.py
+│   └── config.py
 │
 ├── logs/                 # Execution logs (generated automatically)
 │   └── run_<timestamp>/
+│       └── results.log
+│       └── details.log
+│       └── screenshot_if_failed.log
 │
 ├── conftest.py           # Fixtures, hooks, reporting
 ├── pytest.ini            # Pytest configuration (markers)
@@ -42,7 +45,7 @@ project-root/
 
 ## Tech Stack
 
-* Python 3.x
+* Python 3.12
 * Selenium WebDriver
 * Pytest
 * WebDriver Manager
@@ -52,20 +55,34 @@ project-root/
 
 ## How to Install
 
+Via Github:
+
 1. Clone the repository:
 
 ```bash
 git clone https://github.com/lcrodolfo/posgradproject
 cd project-root
 ```
+if .zip:
+Unzip the folder "trabalhofinal" - all files from the project should be there and then go to step 2
 
 2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
-
 ---
+## Login/Register
+The application doesn't allow for some unknown reason the registration of new users using automation.
+All logins are configured with this credentials:
+username: rodolfo4
+password: Test123@
+In case the credentials stop working - the test cases that require the credentials are below and will fail, but logs can be checked to see where exactly each TC failed.
+TC01
+TC07
+TC10
+TC11
+TC12
 
 ## How to Run Tests
 
@@ -95,7 +112,7 @@ and on..
 Defined in `pytest.ini`:
 
 * `login` → login tests
-* `success` → main tests
+* `positive` → main tests
 * `negative` → negative scenarios
 * `tc_id(id)` → test case identifier
 
@@ -134,7 +151,7 @@ class LoginPage:
 
 ---
 
-## 🪵 Logging System
+## Logging System
 
 Each test execution generates:
 
@@ -180,7 +197,7 @@ Success Rate: XX%
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Rodolfo Cassimiro
 

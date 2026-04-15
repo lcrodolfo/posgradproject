@@ -30,7 +30,7 @@ def test_TC07_login_after_registration(driver):
     logger.info("Filling login form with newly registered credentials")
     #Using valid credentials created previosuly to access as the site contains captcha and it is not possible to bypass it
     #But in test envs we would need to use the credentials created in the previous test (TC06) to validate the registration process end to end
-    login_Page.fill_login_Form("rcassimiro3", "Test123@")
+    login_Page.fill_login_Form("rcassimiro4", "Test123@")
     logger.info("Submitted login form with newly registered credentials")
     login_Page.submit_login_Form()
     assert login_Page.login_successful()
