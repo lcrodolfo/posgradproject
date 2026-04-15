@@ -119,6 +119,7 @@ Defined in `pytest.ini`:
 
 ```python
 @pytest.mark.login
+@pytest.mark.positive
 @pytest.mark.negative
 @pytest.mark.tc_id(TC01)
 ```
@@ -126,15 +127,11 @@ Defined in `pytest.ini`:
 Run by marker:
 
 ```bash
-pytest -m login -v
+pytest -m "login and positive" -v
 ```
-
 ---
-
 ##  Framework Design
-
 ### Page Object Model (POM)
-
 Each page contains:
 
 * locators
@@ -150,9 +147,7 @@ class LoginPage:
 ```
 
 ---
-
 ## Logging System
-
 Each test execution generates:
 
 ```
@@ -182,6 +177,7 @@ Total: X
 Passed: X
 Failed: X
 Success Rate: XX%
+Failure Rate: XX%
 ```
 
 ---
@@ -199,6 +195,6 @@ Success Rate: XX%
 
 ## Author
 
-Rodolfo Cassimiro
+Rodolfo Luis Cassimiro - PUC Minas
 
 ---
