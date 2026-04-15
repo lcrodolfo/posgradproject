@@ -67,7 +67,7 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ How to Run Tests
+## How to Run Tests
 
 Run all tests:
 
@@ -90,7 +90,7 @@ and on..
 
 ---
 
-## 🏷️ Test Markers
+## Test Markers
 
 Defined in `pytest.ini`:
 
@@ -114,9 +114,9 @@ pytest -m login -v
 
 ---
 
-## 🧱 Framework Design
+##  Framework Design
 
-### 🔹 Page Object Model (POM)
+### Page Object Model (POM)
 
 Each page contains:
 
