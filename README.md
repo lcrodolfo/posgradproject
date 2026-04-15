@@ -186,7 +186,6 @@ Failure Rate: XX%
 
 * Page Object Model
 * Explicit waits (no sleep)
-* Data-driven testing
 * Logging and reporting
 * Reusable methods
 * Clean test structure
