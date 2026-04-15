@@ -63,7 +63,7 @@ Via Github:
 git clone https://github.com/lcrodolfo/posgradproject
 cd project-root
 ```
-if .zip:
+Via .zip:
 Unzip the folder "trabalhofinal" - all files from the project should be there and then go to step 2
 
 2. Install dependencies:
